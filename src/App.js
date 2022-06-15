@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useSyncExternalStore } from "react";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import List from "./components/List/List";
@@ -6,7 +6,7 @@ import List from "./components/List/List";
 const App = () => {
   const str = "hello react!";
   const logo = "https://pngimg.com/uploads/tesla_logo/tesla_logo_PNG21.png";
-  let cars = [
+  let init_cars = [
     {
       model: "Model S",
       image:
@@ -31,12 +31,37 @@ const App = () => {
       id: 4,
     },
   ];
+  const [cars, setCarse] = useState(init_cars);
+  // ! variables - переменный
+  // let counter = 0;
+  // function increment() {
+  //   counter++;
+  //   console.log(counter);
+  // }
+  // function decrement() {
+  //   counter--;
+  //   console.log(counter);
+  // }
+  // decrement();
+  // useState;
+  // const myHook = useState("hello useState");
+  // console.log(myHook);
+
+  const [state, setState] = useState(0);
+  // console.log(state);
+  // ! state = 'chto-to' // так нельзя
   return (
     <div>
-      <Header logo={logo} name={"Aidana"} age={20} />
+      {/* <button onClick={() => decrement()}>-</button>
+        <span>{counter}</span>
+        <button onClick={() => increment()}>+</button> */}
+      {/* 
+      <button onClick={() => setState(state - 1)}>-</button>
+      <span>{state}</span>
+      <button onClick={() => setState(state + 1)}>+</button> */}
+      <Header cars={cars} logo={logo} name={"Aidana"} age={20} />
       <List cars={cars} />
-      {/* <div>{str}</div> */}
-      <Footer />
+      /* <Footer />
     </div>
   );
 };
