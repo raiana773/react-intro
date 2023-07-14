@@ -61,7 +61,7 @@ const App = () => {
       <button onClick={() => setState(state + 1)}>+</button> */}
       <Header cars={cars} logo={logo} name={"Aidana"} age={20} />
       <List cars={cars} />
-      /* <Footer />
+      <Footer />
     </div>
   );
 };
